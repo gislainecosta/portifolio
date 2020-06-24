@@ -20,7 +20,7 @@ const Projeto = () => {
     return (
         <ThemeProvider theme={MyTheme}>
             <div className="tela-toda">
-                <Menu paginaAtual={'projetos'}/>
+                <Menu paginaAtual={'PROJETOS'}/>
                 <section className='conteudo-principal'>
                     <p>Oi, eu sou o Projetos</p>
                 </section>

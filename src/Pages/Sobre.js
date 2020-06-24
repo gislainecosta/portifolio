@@ -23,7 +23,7 @@ const Sobre = () => {
     return (
         <ThemeProvider theme={MyTheme}>
             <div className="tela-toda">
-                <Menu paginaAtual={'sobre'} />
+                <Menu paginaAtual={'SOBRE'} />
                 <section className='conteudo-principal'>
                     <p>Oi, eu sou o Sobre</p>
                 </section>

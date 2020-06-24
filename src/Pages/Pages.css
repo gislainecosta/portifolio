@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: Roboto, Oxygen, -apple-system, BlinkMacSystemFont, 'Segoe UI',  Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .tela-toda{
@@ -11,4 +11,58 @@
     background-color: #10121b;
     display: grid;
     grid-template-columns: 20% 80%;
+}
+
+#conteudo-principal-home{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+#conteudo-principal-home > section {
+    display: flex;
+    justify-content: space-between;
+    width: 30vw;
+}
+
+#ola, #name{
+    font-size: 4.5vw;
+}
+
+#ola{
+    color: white;
+    text-align: center;
+}
+
+#name{
+    color: #037fff; 
+}
+
+#texto-home{
+    margin: 2% 10%;
+    text-align: center;
+    font-size: 2.5vw;
+}
+
+#texto-contato{
+    margin: 3% 0 3% 5%;
+    font-size: 2.5vw;
+}
+
+.redes-sociais{
+    margin-top: 5%;
+    cursor: pointer;
+    width: 60%;
+}
+
+.conteudo-principal{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }

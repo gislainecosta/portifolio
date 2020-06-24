@@ -20,7 +20,7 @@
 
 .container-menu > img{
     width: 80%;
-    margin: 5% 0; 
+    margin: 10% 0; 
 }
 
 .container-menu > hr{
@@ -28,5 +28,15 @@
     height: 2px;
     background-color: #2e344e;
     border: none;
-    margin-bottom: 2%;
+    margin-bottom: 10%;
+}
+
+.container-menu > hr:last-of-type{
+    margin: 20% 0 5% 0;
+}
+
+#autoria{
+    font-size: 1.2rem;
+    text-align: center;
+    font-family: 'Gabriola', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }

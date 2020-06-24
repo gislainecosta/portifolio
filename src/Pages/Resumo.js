@@ -20,7 +20,7 @@ const Resumo = () => {
     return (
         <ThemeProvider theme={MyTheme}>
             <div className="tela-toda">
-                <Menu paginaAtual={'resumo'}/>
+                <Menu paginaAtual={'RESUMO'}/>
                 <section className='conteudo-principal'>
                     <p>Oi, eu sou o resumo</p>
                 </section>

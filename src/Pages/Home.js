@@ -2,6 +2,14 @@ import React, { useState, useEffect } from "react";
 import "./Pages.css";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import Menu from './../components/Menu';
+import  styled from 'styled-components';
+import GitGrey from '../img/git-grey.svg';
+import GitBlue from '../img/git-blue.svg';
+import FaceGrey from '../img/face-gray.svg';
+import FaceBlue from '../img/face-blue.svg';
+import LinkeGrey from '../img/linkedin-grey.svg';
+import LinkeBlue from '../img/linkedin-blue.svg';
+import { useHover } from './../Hooks/useHover';
 
 const MyTheme = createMuiTheme({
     palette: {
@@ -16,20 +24,23 @@ const MyTheme = createMuiTheme({
 
 
 const Home = () => {
-    const [pagina, setPagina] = useState()
+    const [hoverRefGit, isHoveredGit] = useHover();
+    const [hoverRefFace, isHoveredFace] = useHover();
+    const [hoverRefLinke, isHoveredLinke] = useHover();
     
-    useEffect(() => {
-        let urlAtual = window.location.href;
-        setPagina(urlAtual)
-    })
-
-
     return (
         <ThemeProvider theme={MyTheme}>
             <div className="tela-toda">
-                <Menu paginaAtual={pagina}/>
-                <section className='conteudo-principal'>
-                    <p>Oi, eu sou o Home</p>
+                <Menu paginaAtual={'HOME'}/>
+                <section id='conteudo-principal-home'>
+                    <p id="ola">Olá, eu sou a <span id='name'>Gislaine Costa</span></p>
+                    <p id="texto-home">Estudante de Web Full Stack Development, com experiência em Front-end, Ux/Ui, Design e Marketing </p>
+                    
+                    <section>
+                        <a target="_blank" href='https://github.com/gislainecosta'><img className='redes-sociais' ref={hoverRefGit} src={isHoveredGit ? GitBlue : GitGrey} alt='Link para Github' /></a>
+                        <a target="_blank" href='https://www.linkedin.com/in/gislainecostapereira'><img className='redes-sociais' ref={hoverRefLinke} src={isHoveredLinke ? LinkeBlue : LinkeGrey} alt='link para Linkedin' /></a>
+                        <a target="_blank" href='https://www.facebook.com/gislainecostapereira'><img className='redes-sociais' ref={hoverRefFace} src={isHoveredFace ? FaceBlue : FaceGrey} alt='link para Facebook' /></a>
+                    </section>
                 </section>
             </div>
         </ThemeProvider>
