@@ -2,15 +2,7 @@
     margin: 0;
     padding: 0;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
-.tela-toda{
-    width: 100vw;
-    overflow-x: hidden;
-    color: #99a0b7;
-    background-color: #10121b;
-    display: grid;
-    grid-template-columns: 20% 80%;
+    border: none;
 }
 
 #conteudo-principal-home{
@@ -56,8 +48,27 @@
     align-self: flex-end;
     font-size: 1.8vw;
     border-radius: 20px;
+    cursor: pointer;
 }
 
+
+#botao-enviar:hover{
+    background-color: #085aac;
+    color: white;
+    border: none;
+}
+
+#grid-projetos{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+    row-gap: 1vw;
+    column-gap: 1vw;
+    margin: 2% auto;
+    width: 95%;
+}
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
@@ -74,10 +85,6 @@ input:-webkit-autofill:focus {
     background-color: transparent;
 }
 
-#texto-contato{
-    margin: 3% 0 3% 5%;
-    font-size: 2.5vw;
-}
 
 .redes-sociais{
     margin-top: 5%;
@@ -92,4 +99,64 @@ input:-webkit-autofill:focus {
     width: 100%;
     height: 100%;
     overflow: hidden;
+    margin: none;
+}
+
+.tela-toda{
+    width: 100vw;
+    overflow-x: hidden;
+    color: #99a0b7;
+    background-color: #10121b;
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+
+.titulo-paginas{
+    margin: 3% 0 0 5%;
+    font-size: 2.5vw;
+    color: #c8ccda;
+}
+
+.foto-projeto-principal{
+    width: 30vw;
+}
+
+.projeto{
+    width: 100%;
+    color: #c8ccda;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: start;
+    align-items: center;
+}
+
+.texto-projetos{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    height: 25vh;
+}
+
+.texto-projetos >p:first-of-type{
+    font-size: 2vw;
+}
+
+.texto-projetos >p:last-of-type{
+    margin-top: 2%;
+    font-size: 1.5vw;
+}
+
+.texto-projetos > button{
+    font-size: 1.3vw;
+    background-color: transparent;
+    border: none;
+    color: #04407c;
+    cursor: pointer;
+    margin: 3% 0;
+}
+
+.texto-projetos > button:hover{
+    color: #037fff;
 }

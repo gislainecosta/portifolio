@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Pages.css";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import Menu from './../components/Menu';
+import { listaProjetos } from './ListaProjetos';
 
 const MyTheme = createMuiTheme({
     palette: {
@@ -16,13 +17,34 @@ const MyTheme = createMuiTheme({
 
 
 const Projeto = () => {
+    const [projetos, setProjetos] = useState([])
+
+    useEffect(() =>{
+        setProjetos(listaProjetos)
+    }, [listaProjetos])
+    
+    console.log(projetos)
+
+    const listagemProjetos = projetos.map((projeto)=>{
+        return <section key={projeto.id} className="projeto">
+            <img className="foto-projeto-principal" src={projeto.foto} alt="Foto do Projeto" />
+            <section className="texto-projetos">
+                <p><b><i>{projeto.nome}</i></b></p>
+                <p>{projeto.contibuicao}</p>
+                <button onClick={()=>{console.log("funcionou botão")}}>Saiba Mais</button>
+            </section>
+        </section>
+    })
 
     return (
         <ThemeProvider theme={MyTheme}>
             <div className="tela-toda">
                 <Menu paginaAtual={'PROJETOS'}/>
                 <section className='conteudo-principal'>
-                    <p>Oi, eu sou o Projetos</p>
+                    <p className="titulo-paginas" >Meus projetos</p>
+                    <section id="grid-projetos">
+                        {listagemProjetos}
+                    </section>
                 </section>
             </div>
         </ThemeProvider>
