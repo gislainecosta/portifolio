@@ -47,6 +47,33 @@
     font-size: 2.5vw;
 }
 
+#botao-enviar{
+    background-color: #037fff;
+    color: white;
+    border: none;
+    width: 10vw;
+    height: 10%;
+    align-self: flex-end;
+    font-size: 1.8vw;
+    border-radius: 20px;
+}
+
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:active,
+input:-webkit-autofill:focus {
+    background-color: transparent !important;
+    color: #555 !important;
+    -webkit-box-shadow: 0 0 0 1000px white inset !important;
+    -webkit-text-fill-color: #555555 !important;
+    }
+
+
+.input-teste{
+    background-color: transparent;
+}
+
 #texto-contato{
     margin: 3% 0 3% 5%;
     font-size: 2.5vw;

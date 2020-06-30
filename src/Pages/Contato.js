@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import * as emailjs from 'emailjs-com';
 import "./Pages.css";
 import { createMuiTheme, ThemeProvider, withTheme } from "@material-ui/core/styles";
 import Menu from './../components/Menu';
@@ -9,8 +10,10 @@ import SendIcon from '@material-ui/icons/SendRounded';
 
 const Input = withStyles({
     root: {
+        
         '& label': {
             color: 'white',
+            
         },
         '& .MuiOutlinedInput-root': {
             '& fieldset': {
@@ -34,24 +37,23 @@ const useStyles = makeStyles((theme) => ({
         marginLeft: theme.spacing(2),
         fontSize: '2.5vw'
     },
-    botao:{
-        width: '15vw',
-        margin: '3% 0 0 45%',
-        fontSize: '1.5vw',
-    },
     input: {
         '& > *': {
+            backgroundColor:'none !important', 
             width: '50vw',
             color: 'white',
             marginBottom: '2%',
+            borderRadius: '15px',
         },
     },
     inputGrande: {
+        
         '& > *': {
             width: '50vw',
             color: 'white',
             marginBottom: '2%',
             minHeight: '15vw',
+            borderRadius: '15px',
         },
     },
 
@@ -78,22 +80,40 @@ const MyTheme = createMuiTheme({
 const Contato = () => {
     const classes = useStyles(); 
 
+    const enviarEmail = (e) =>{
+    e.preventDefault();
+        console.log(e.target)
+        emailjs.sendForm('gmail', 'form-contact-portifolio', e.target, 'user_TgNV2PcOnHbdlgOnfKrfL')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+  }
+
     return (
         <ThemeProvider theme={MyTheme}>
             <div className="tela-toda">
                 <Menu paginaAtual={'CONTATO'} />
                 <section className='conteudo-principal'>
                     <p id="texto-contato">Entre em contato</p>
-                    <form className={classes.root} autoComplete="off">
-                        <Input className={classes.input} color='primary.light' required type='email' label="Nome" variant="outlined" />
-                        <Input className={classes.input} color='primary.light' required type='text' label="E-mail" variant="outlined" />
-                        <Input className={classes.input} color='primary.light' required type='text' label="Assunto" variant="outlined" />
-                        <Input className={classes.inputGrande} color='primary.light' required type='text' multiline label="Mensagem" variant="outlined" />
+                    <form className={classes.root} autoComplete="off" onSubmit={enviarEmail}>                        
+                        <input className="input-teste" placeholder="E-mail" type="email"/>
                         <br />
-                        <Fab className={classes.botao} onClick={() =>{console.log('funciona')}} color="secondary" variant="extended">
-                            Enviar
-                            <SendIcon className={classes.extendedIcon} />
-                        </Fab>
+                        <Input 
+                            autocomplete='off'
+                            className={classes.input}
+                            color='primary.light'
+                            required
+                            label="Nome"
+                            variant="outlined"
+                            name="autor"
+                        />
+                        <Input className={classes.input} color='primary.light' required type='email' label="E-mail" variant="outlined" name="contato"/>
+                        <Input className={classes.input} color='primary.light' required type='text' label="Assunto" variant="outlined" name="assunto"/>
+                        <Input className={classes.inputGrande} color='primary.light' required type='text' multiline label="Mensagem" variant="outlined" name="mensagem" />
+                        <br />
+                        <input id="botao-enviar" type="submit" value="Enviar" />
                     </form>
                 </section>
             </div>
