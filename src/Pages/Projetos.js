@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { useHistory } from 'react-router';
 import "./Pages.css";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import Menu from './../components/Menu';
-import { listaProjetos } from './ListaProjetos';
+import { listaProjetos } from '../ListaProjetos';
+
 
 const MyTheme = createMuiTheme({
     palette: {
@@ -16,22 +18,20 @@ const MyTheme = createMuiTheme({
 });
 
 
-const Projeto = () => {
-    const [projetos, setProjetos] = useState([])
+const Projetos = () => {
+   const history = useHistory();
 
-    useEffect(() =>{
-        setProjetos(listaProjetos)
-    }, [listaProjetos])
-    
-    console.log(projetos)
+   const goToPage = (id) =>{
+       history.push(`/projetos/${id}` )
+   }
 
-    const listagemProjetos = projetos.map((projeto)=>{
+    const listagemProjetos = listaProjetos.map((projeto)=>{
         return <section key={projeto.id} className="projeto">
-            <img className="foto-projeto-principal" src={projeto.foto} alt="Foto do Projeto" />
+            <img className="foto-projeto" src={projeto.foto} alt="Foto do Projeto" />
             <section className="texto-projetos">
                 <p><b><i>{projeto.nome}</i></b></p>
-                <p>{projeto.contibuicao}</p>
-                <button onClick={()=>{console.log("funcionou botão")}}>Saiba Mais</button>
+                <p>{projeto.contribuicao}</p>
+                <button onClick={() => {goToPage(projeto.id)}}>Saiba Mais</button>
             </section>
         </section>
     })
@@ -51,4 +51,4 @@ const Projeto = () => {
     );
 };
 
-export default Projeto;
+export default Projetos;

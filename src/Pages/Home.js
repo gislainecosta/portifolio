@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "./Pages.css";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import Menu from './../components/Menu';
-import  styled from 'styled-components';
 import GitGrey from '../img/git-grey.svg';
 import GitBlue from '../img/git-blue.svg';
 import FaceGrey from '../img/face-gray.svg';
@@ -33,7 +32,7 @@ const Home = () => {
             <div className="tela-toda">
                 <Menu paginaAtual={'HOME'}/>
                 <section id='conteudo-principal-home'>
-                    <p id="ola">Olá, eu sou a <span id='name'>Gislaine Costa</span></p>
+                    <p id="ola">Olá, eu sou a <span id='name'>Gislaine Costa Pereira</span></p>
                     <p id="texto-home">Estudante de Web Full Stack Development, com experiência em Front-end, Ux/Ui, Design e Marketing </p>
                     
                     <section>

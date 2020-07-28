@@ -5,8 +5,6 @@ import { createMuiTheme, ThemeProvider, withTheme } from "@material-ui/core/styl
 import Menu from './../components/Menu';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
-import Fab from '@material-ui/core/Fab';
-import SendIcon from '@material-ui/icons/SendRounded';
 
 const Input = withStyles({
     root: {
@@ -82,10 +80,9 @@ const Contato = () => {
 
     const enviarEmail = (e) =>{
     e.preventDefault();
-        console.log(e.target)
         emailjs.sendForm('gmail', 'form-contact-portifolio', e.target, 'user_TgNV2PcOnHbdlgOnfKrfL')
       .then((result) => {
-          console.log(result.text);
+          alert("Sua mensagem foi enviada com sucesso!");
       }, (error) => {
           console.log(error.text);
       });
@@ -98,8 +95,6 @@ const Contato = () => {
                 <section className='conteudo-principal'>
                     <p className="titulo-paginas" >Entre em contato</p>
                     <form className={classes.root} autoComplete="off" onSubmit={enviarEmail}>                        
-                        <input className="input-teste" placeholder="E-mail" type="email"/>
-                        <br />
                         <Input 
                             autocomplete='off'
                             className={classes.input}
@@ -109,9 +104,33 @@ const Contato = () => {
                             variant="outlined"
                             name="autor"
                         />
-                        <Input className={classes.input} color='primary.light' required type='email' label="E-mail" variant="outlined" name="contato"/>
-                        <Input className={classes.input} color='primary.light' required type='text' label="Assunto" variant="outlined" name="assunto"/>
-                        <Input className={classes.inputGrande} color='primary.light' required type='text' multiline label="Mensagem" variant="outlined" name="mensagem" />
+                        <Input 
+                            className={classes.input} 
+                            color='primary.light'
+                            required 
+                            type='email' 
+                            label="E-mail" 
+                            variant="outlined"
+                            name="contato"
+                        />
+                        <Input 
+                            className={classes.input} 
+                            color='primary.light' 
+                            required type='text' 
+                            label="Assunto" 
+                            variant="outlined" 
+                            name="assunto"
+                        />
+                        <Input 
+                            className={classes.inputGrande} 
+                            color='primary.light' 
+                            required 
+                            type='text' 
+                            multiline 
+                            label="Mensagem" 
+                            variant="outlined" 
+                            name="mensagem" 
+                        />
                         <br />
                         <input id="botao-enviar" type="submit" value="Enviar" />
                     </form>

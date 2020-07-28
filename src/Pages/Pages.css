@@ -59,13 +59,13 @@
 }
 
 #grid-projetos{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
     align-items: center;
     margin: 0;
-    row-gap: 1vw;
-    column-gap: 1vw;
+    row-gap: 2vw;
+    column-gap: 2vw;
     margin: 2% auto;
     width: 95%;
 }
@@ -76,8 +76,8 @@ input:-webkit-autofill:active,
 input:-webkit-autofill:focus {
     background-color: transparent !important;
     color: #555 !important;
-    -webkit-box-shadow: 0 0 0 1000px white inset !important;
-    -webkit-text-fill-color: #555555 !important;
+    -webkit-box-shadow: 0 0 0 1000px #10121b inset !important;
+    -webkit-text-fill-color: #FFF !important;
     }
 
 
@@ -112,13 +112,17 @@ input:-webkit-autofill:focus {
 }
 
 .titulo-paginas{
-    margin: 3% 0 0 5%;
+    margin: 3% 0 2% 3%;
     font-size: 2.5vw;
-    color: #c8ccda;
+    color: #e9ebf3;
+    font-weight: bold;
 }
 
-.foto-projeto-principal{
-    width: 30vw;
+.foto-projeto{
+    width: 15vw;
+    border-radius: 50%;
+    border: solid 5px rgba(255, 255, 255, 0.849);
+    box-shadow: 4px 4px 11px -3px rgba(0, 0, 0, 1);
 }
 
 .projeto{
@@ -136,7 +140,8 @@ input:-webkit-autofill:focus {
     flex-wrap: nowrap;
     justify-content: space-around;
     align-items: flex-start;
-    height: 25vh;
+    height: 100%;
+    margin-left: 3%;
 }
 
 .texto-projetos >p:first-of-type{
@@ -152,11 +157,49 @@ input:-webkit-autofill:focus {
     font-size: 1.3vw;
     background-color: transparent;
     border: none;
-    color: #04407c;
+    color: #0756a5;
     cursor: pointer;
     margin: 3% 0;
 }
 
 .texto-projetos > button:hover{
     color: #037fff;
+}
+
+.cabecalho-projeto{
+    display: flex;
+    align-items: center;
+    width: 96%;
+    margin-top: 2%;
+}
+
+.descricao-projeto{
+    font-size: 1.5vw;
+    color: #c8ccda;
+    text-align: justify;
+}
+
+.titulo-projeto{
+    font-size: 2.5vw;
+    color: #e9ebf3;
+    font-weight: bold;
+}
+
+.cabecalho-projeto >section{
+    margin-left: 2%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.container-links-detalhe{
+    display: flex;
+    width: 20%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.links-detalhe{
+    width: 5vw;
 }
