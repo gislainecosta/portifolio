@@ -33,7 +33,7 @@ const Home = () => {
             <div className="tela-toda">
                 <Menu paginaAtual={'HOME'}/>
                 <section id='conteudo-principal-home'>
-                    <p id="ola">Olá, eu sou a <span id='name'>Gislaine Costa</span></p>
+                    <p id="ola">Olá, eu sou a <span id='name'>Gislaine Costa Pereira</span></p>
                     <p id="texto-home">Estudante de Web Full Stack Development, com experiência em Front-end, Ux/Ui, Design e Marketing </p>
                     
                     <section>

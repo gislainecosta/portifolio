@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Pages.css";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import Menu from './../components/Menu';
-import { listaProjetos } from './ListaProjetos';
+import { listaProjetos } from '../ListaProjetos';
 
 const MyTheme = createMuiTheme({
     palette: {
@@ -30,7 +30,7 @@ const Projeto = () => {
             <img className="foto-projeto-principal" src={projeto.foto} alt="Foto do Projeto" />
             <section className="texto-projetos">
                 <p><b><i>{projeto.nome}</i></b></p>
-                <p>{projeto.contibuicao}</p>
+                <p>{projeto.contribuicao}</p>
                 <button onClick={()=>{console.log("funcionou botão")}}>Saiba Mais</button>
             </section>
         </section>
