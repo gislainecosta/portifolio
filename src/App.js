@@ -2,7 +2,8 @@ import React from 'react';
 import { Switch, Route, BrowserRouter } from "react-router-dom";
 import Home from './Pages/Home';
 import Contato from './Pages/Contato';
-import Projeto from './Pages/Projetos';
+import DetalheProjeto from './Pages/DetalheProjeto';
+import Projetos from './Pages/Projetos';
 import Resumo from './Pages/Resumo';
 import Sobre from './Pages/Sobre';
 
@@ -28,7 +29,11 @@ function App() {
           </Route>
 
           <Route exact path="/projetos">
-            <Projeto />
+            <Projetos />
+          </Route>
+
+          <Route exact path="/projetos/:id">
+            <DetalheProjeto />
           </Route>
         </Switch>
       </BrowserRouter>

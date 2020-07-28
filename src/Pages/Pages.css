@@ -112,12 +112,13 @@ input:-webkit-autofill:focus {
 }
 
 .titulo-paginas{
-    margin: 3% 0 2% 5%;
+    margin: 3% 0 2% 3%;
     font-size: 2.5vw;
-    color: #c8ccda;
+    color: #e9ebf3;
+    font-weight: bold;
 }
 
-.foto-projeto-principal{
+.foto-projeto{
     width: 15vw;
     border-radius: 50%;
     border: solid 5px rgba(255, 255, 255, 0.849);
@@ -163,4 +164,42 @@ input:-webkit-autofill:focus {
 
 .texto-projetos > button:hover{
     color: #037fff;
+}
+
+.cabecalho-projeto{
+    display: flex;
+    align-items: center;
+    width: 96%;
+    margin-top: 2%;
+}
+
+.descricao-projeto{
+    font-size: 1.5vw;
+    color: #c8ccda;
+    text-align: justify;
+}
+
+.titulo-projeto{
+    font-size: 2.5vw;
+    color: #e9ebf3;
+    font-weight: bold;
+}
+
+.cabecalho-projeto >section{
+    margin-left: 2%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.container-links-detalhe{
+    display: flex;
+    width: 20%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.links-detalhe{
+    width: 5vw;
 }

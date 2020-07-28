@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "./Pages.css";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import Menu from './../components/Menu';
-import  styled from 'styled-components';
 import GitGrey from '../img/git-grey.svg';
 import GitBlue from '../img/git-blue.svg';
 import FaceGrey from '../img/face-gray.svg';
