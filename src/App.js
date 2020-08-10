@@ -4,7 +4,6 @@ import Home from './Pages/Home';
 import Contato from './Pages/Contato';
 import DetalheProjeto from './Pages/DetalheProjeto';
 import Projetos from './Pages/Projetos';
-import Resumo from './Pages/Resumo';
 import Sobre from './Pages/Sobre';
 
 function App() {
@@ -18,10 +17,6 @@ function App() {
 
           <Route exact path="/sobre">
             <Sobre />
-          </Route>
-
-          <Route exact path="/resumo">
-            <Resumo />
           </Route>
 
           <Route exact path="/contato">

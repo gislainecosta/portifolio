@@ -94,6 +94,7 @@ const Contato = () => {
                 <Menu paginaAtual={'CONTATO'} />
                 <section className='conteudo-principal'>
                     <p className="titulo-paginas" >Entre em contato</p>
+                    <hr />
                     <form className={classes.root} autoComplete="off" onSubmit={enviarEmail}>                        
                         <Input 
                             autocomplete='off'

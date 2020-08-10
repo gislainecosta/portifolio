@@ -42,6 +42,7 @@ const Projetos = () => {
                 <Menu paginaAtual={'PROJETOS'}/>
                 <section className='conteudo-principal'>
                     <p className="titulo-paginas" >Meus projetos</p>
+                    <hr />
                     <section id="grid-projetos">
                         {listagemProjetos}
                     </section>

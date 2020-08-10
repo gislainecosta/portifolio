@@ -20,7 +20,10 @@
 
 .container-menu > img{
     width: 80%;
-    margin: 10% 0; 
+    margin: 10% 0;
+    border-radius: 50%;
+    border: 10px solid #2e344e;
+    box-shadow: 2px 2px 5px 0px rgba(50, 50, 50, 0.9);
 }
 
 .container-menu > hr{

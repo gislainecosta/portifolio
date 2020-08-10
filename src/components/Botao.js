@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./Components.css";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import { useHistory } from "react-router";

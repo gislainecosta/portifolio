@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Components.css";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
-import Perfil from '../img/Perfil.png';
+import Perfil from '../img/Perfil.jpg';
 import { useHistory } from "react-router";
 import styled from 'styled-components';
 import BotaoMenu from './Botao';
@@ -32,7 +32,6 @@ const Menu = (props) => {
                 <hr />
                 <BotaoMenu paginaAtual={props.paginaAtual} titulo={'HOME'} irPagina={() =>{goToPage('')}} />  
                 <BotaoMenu paginaAtual={props.paginaAtual} titulo={'SOBRE'} irPagina={() => {goToPage('sobre')}} />  
-                <BotaoMenu paginaAtual={props.paginaAtual} titulo={'RESUMO'} irPagina={() => {goToPage('resumo')}} />  
                 <BotaoMenu paginaAtual={props.paginaAtual} titulo={'PROJETOS'} irPagina={() => {goToPage('projetos')}} />  
                 <BotaoMenu paginaAtual={props.paginaAtual} titulo={'CONTATO'} irPagina={() =>{goToPage('contato')}} />  
                 <hr />
