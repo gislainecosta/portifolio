@@ -93,7 +93,7 @@ const Contato = () => {
             <div className="tela-toda">
                 <Menu paginaAtual={'CONTATO'} />
                 <section className='conteudo-principal'>
-                    <p className="titulo-paginas" >Entre em contato</p>
+                    <h1>Entre em contato</h1>
                     <hr />
                     <form className={classes.root} autoComplete="off" onSubmit={enviarEmail}>                        
                         <Input 
