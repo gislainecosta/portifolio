@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState} from "react";
 import { useHistory } from 'react-router';
 import "./Pages.css";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
@@ -43,19 +43,52 @@ const MyTheme = createMuiTheme({
 });
 
 const Projetos = () => {
-   const history = useHistory();
+    const history = useHistory();
+    const [lista, setLista] = useState([])
 
-   const goToPage = (id) =>{
-       history.push(`/projetos/${id}` )
-   }
+    const goToPage = (id) =>{
+        history.push(`/projetos/${id}` )
+    }
 
-    const listagemProjetos = listaProjetos.map((projeto)=>{
+    useEffect(()=>{
+        setLista(listaProjetos)
+    })
+
+    const listaFront = lista.filter((projeto) => {
+        return projeto.tipo == "front"
+    }).map((projeto)=>{
         return <section key={projeto.id} className="projeto">
             <FotoProjeto isSite={projeto.isSite} className="foto-projeto" src={projeto.foto} alt="Foto do Projeto" />
             <section className="texto-projetos">
                 <p><b><i>{projeto.nome}</i></b></p>
                 <p>{projeto.contribuicao}</p>
                 <button onClick={() => {goToPage(projeto.id)}}>Saiba Mais</button>
+            </section>
+        </section>
+    })
+
+    const listaBack = lista.filter((projeto) => {
+        return projeto.tipo == "back"
+    }).map((projeto) => {
+        return <section key={projeto.id} className="projeto">
+            <FotoProjeto isSite={projeto.isSite} className="foto-projeto" src={projeto.foto} alt="Foto do Projeto" />
+            <section className="texto-projetos">
+                <p><b><i>{projeto.nome}</i></b></p>
+                <p>{projeto.contribuicao}</p>
+                <button onClick={() => { goToPage(projeto.id) }}>Saiba Mais</button>
+            </section>
+        </section>
+    })
+
+    const listaDesign = lista.filter((projeto) => {
+        return projeto.tipo == "mkt"
+    }).map((projeto) => {
+        return <section key={projeto.id} className="projeto">
+            <FotoProjeto isSite={projeto.isSite} className="foto-projeto" src={projeto.foto} alt="Foto do Projeto" />
+            <section className="texto-projetos">
+                <p><b><i>{projeto.nome}</i></b></p>
+                <p>{projeto.contribuicao}</p>
+                <button onClick={() => { goToPage(projeto.id) }}>Saiba Mais</button>
             </section>
         </section>
     })
@@ -67,8 +100,23 @@ const Projetos = () => {
                 <section className='conteudo-principal'>
                     <h1>Meus projetos</h1>
                     <hr />
-                    <section id="grid-projetos">
-                        {listagemProjetos}
+
+                    <h2>Front-end e Ui/Ux</h2>
+                    <hr />
+                    <section className="grid-projetos">
+                        {listaFront}
+                    </section>
+
+                    <h2>Back-end</h2>
+                    <hr />
+                    <section className="grid-projetos">
+                        {listaBack}
+                    </section>
+
+                    <h2>Design e Marketing</h2>
+                    <hr />
+                    <section className="grid-projetos">
+                        {listaDesign}
                     </section>
                 </section>
             </div>
