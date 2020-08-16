@@ -46,7 +46,7 @@ const Sobre = () => {
                             <p>Estudante de Web Full Stack Development<br/>
                                 36 anos<br/>
                                 Florianópolis/SC</p>
-                            <a target="_blank" href="https://drive.google.com/file/d/17-z3032YFTtSasg8n8V48pHiQiZ9wfeH/view?usp=sharing">&nbsp;&nbsp;Acessar CV&nbsp;&nbsp;</a>
+                            <a target="_blank" href="https://drive.google.com/file/d/16dlaJqqq48x2VuvkBrck-uJn4Tj8bl_8/view?usp=sharing">&nbsp;&nbsp;Acessar CV&nbsp;&nbsp;</a>
                         </section>
                     </section>
 

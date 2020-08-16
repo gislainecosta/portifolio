@@ -40,21 +40,19 @@ const useStyles = makeStyles((theme) => ({
     input: {
         '& > *': {
             backgroundColor:'none !important', 
-            width: '150%',
+            width: '60vw',
             color: 'white',
             marginBottom: '2%',
             borderRadius: '15px',
-            marginBottom: '10%'
         },
     },
     inputGrande: {
         '& > *': {
-            width: '162%',
+            width: '60vw',
             color: 'white',
             marginBottom: '2%',
             minHeight: '25vw',
             borderRadius: '15px',
-            marginBottom: '10%'
         },
     },
 }));
