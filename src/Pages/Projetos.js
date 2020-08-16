@@ -7,23 +7,38 @@ import { listaProjetos } from '../ListaProjetos';
 import styled  from 'styled-components';
 
 const FotoProjeto = styled.img`
-    width: 15vw;
+    width: ${props => {
+        if (props.tela == "note") {
+            return "20vw"
+        } else if (props.tela == "mobile"){
+            return "10vw"
+        }else{
+            return "15vw"
+        }
+    }};
+    margin-left:${props => {
+        if (props.tela == "mobile") {
+            return "15%"
+        } else {
+            return "0"
+        }
+    }};
     border-radius: ${props=>{
-        if(props.isSite === true){
+        if (props.tipo == "front") {
             return "none"
         }else{
             return "50%"
         }
     }};
     border: ${props => {
-        if (props.isSite === true) {
+        if (props.tipo == "front") {
             return "none"
         } else {
             return "solid 5px rgba(255, 255, 255, 0.849);"
         }
     }};
     box-shadow: ${props => {
-        if (props.isSite === true) {
+        if (props.tipo == "front") {
             return "none"
         } else {
             return "4px 4px 11px -3px rgba(0, 0, 0, 1)"
@@ -52,16 +67,15 @@ const Projetos = () => {
 
     useEffect(()=>{
         setLista(listaProjetos)
-    })
+    }, [listaProjetos])
 
     const listaFront = lista.filter((projeto) => {
         return projeto.tipo == "front"
     }).map((projeto)=>{
         return <section key={projeto.id} className="projeto">
-            <FotoProjeto isSite={projeto.isSite} className="foto-projeto" src={projeto.foto} alt="Foto do Projeto" />
+            <FotoProjeto tipo={projeto.tipo} tela={projeto.tela} src={projeto.foto} alt="Foto do Projeto" />
             <section className="texto-projetos">
                 <p><b><i>{projeto.nome}</i></b></p>
-                <p>{projeto.contribuicao}</p>
                 <button onClick={() => {goToPage(projeto.id)}}>Saiba Mais</button>
             </section>
         </section>
@@ -71,11 +85,11 @@ const Projetos = () => {
         return projeto.tipo == "back"
     }).map((projeto) => {
         return <section key={projeto.id} className="projeto">
-            <FotoProjeto isSite={projeto.isSite} className="foto-projeto" src={projeto.foto} alt="Foto do Projeto" />
+            <FotoProjeto tipo={projeto.tipo} src={projeto.foto} alt="Foto do Projeto" />
             <section className="texto-projetos">
                 <p><b><i>{projeto.nome}</i></b></p>
-                <p>{projeto.contribuicao}</p>
-                <button onClick={() => { goToPage(projeto.id) }}>Saiba Mais</button>
+                <h3>{projeto.contribuicao}</h3>
+                <a target="_blank" href={projeto.github}>Github</a>
             </section>
         </section>
     })
@@ -84,10 +98,10 @@ const Projetos = () => {
         return projeto.tipo == "mkt"
     }).map((projeto) => {
         return <section key={projeto.id} className="projeto">
-            <FotoProjeto isSite={projeto.isSite} className="foto-projeto" src={projeto.foto} alt="Foto do Projeto" />
+            <FotoProjeto tipo={projeto.tipo} tela={projeto.tela} src={projeto.foto} alt="Foto do Projeto" />
             <section className="texto-projetos">
                 <p><b><i>{projeto.nome}</i></b></p>
-                <p>{projeto.contribuicao}</p>
+                <h3>{projeto.contribuicao}</h3>
                 <button onClick={() => { goToPage(projeto.id) }}>Saiba Mais</button>
             </section>
         </section>

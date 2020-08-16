@@ -11,6 +11,7 @@ import SiteBlue from "../img/siteBlue.png";
 import GitGrey from '../img/git-grey.svg';
 import GitBlue from '../img/git-blue.svg';
 import styled from 'styled-components';
+import ImageGallery from 'react-image-gallery';
 
 const MyTheme = createMuiTheme({
     palette: {
@@ -24,23 +25,31 @@ const MyTheme = createMuiTheme({
 });
 
 const FotoProjeto = styled.img`
-    width: 25vw;
+    width: ${props => {
+        if (props.tela == "note") {
+            return "40vw"
+        } else if (props.tela == "mobile") {
+            return "12vw"
+        } else {
+            return "15vw"
+        }
+    }};
     border-radius: ${props => {
-        if (props.isSite === true) {
+    if (props.tipo == "front") {
             return "none"
         } else {
             return "50%"
         }
     }};
     border: ${props => {
-        if (props.isSite === true) {
+    if (props.tipo == "front") {
             return "none"
         } else {
             return "solid 5px rgba(255, 255, 255, 0.849);"
         }
     }};
     box-shadow: ${props => {
-        if (props.isSite === true) {
+    if (props.tipo == "front") {
             return "none"
         } else {
             return "4px 4px 11px -3px rgba(0, 0, 0, 1)"
@@ -49,27 +58,39 @@ const FotoProjeto = styled.img`
 `
 
 const Projeto = (props) => {
-    let history = useHistory()
+    let history = useHistory();
+    const pathParams = useParams();
     const [hoverRefGit, isHoveredGit] = useHover();
     const [hoverRefSite, isHoveredSite] = useHover();
-    const pathParams = useParams();
     const [lista, setLista] = useState([]);
-    
-    useEffect(() => {
+    const [imagens, setImagens] = useState([]);
+
+    const goToProjetos = () => {
+        history.push("/projetos")
+    }
+
+    useEffect(()=>{
+        pegaLista()
+    }, [listaProjetos])
+
+    const pegaLista =()=>{
+
         const listagemProjetos = listaProjetos.filter((projeto) => {
             return projeto.id == pathParams.id
         })
-        setLista(listagemProjetos)
-    })
-
-    const goToProjetos = () => {
-        history.push("projetos")
-        console.log("Funfou botão")
+        setLista(listagemProjetos[0])
+        setImagens(listagemProjetos[0].fotos)
     }
 
-    const listagemProjetos = listaProjetos.filter((projeto) => {
-        return projeto.id == pathParams.id
-    })
+    let otimizado = ""
+
+    if (lista.tela === "note") {
+        otimizado = "Desktop e Notebook"
+    } else if (lista.tela === "mobile"){
+        otimizado = "Dispositivos Móveis"
+    }else{
+        otimizado = "Todos os tipos de tela"
+    }
 
     return (
         <ThemeProvider theme={MyTheme}>
@@ -77,18 +98,25 @@ const Projeto = (props) => {
                 <Menu paginaAtual={'PROJETOS'}/>
                 <section className='conteudo-principal'>
                     <section className="cabecalho-projeto">
-                        <FotoProjeto isSite={listagemProjetos[0].isSite} className="foto-projeto" src={listagemProjetos[0].foto} alt="Logo Projeto"/>
+                        <FotoProjeto tela={lista.tela} tipo={lista.tipo} src={lista.foto} alt="Logo Projeto"/>
                         <section>
-                            <p className="titulo-projeto">{listagemProjetos[0].nome}</p>
-                            <p className="descricao-projeto">{listagemProjetos[0].descricao}</p>
-                            <button className="botao" onClick={goToProjetos}>Voltar aos Projetos</button>
+                            <p className="titulo-projeto">{lista.nome}</p>
+                            <p className="descricao-projeto"><b>Descrição: </b>{lista.descricao}</p>
+                            <p className="descricao-projeto"> <b>Contribuição: </b>{lista.contribuicao}</p>
+                            <p><b>Otimizado para: </b>{otimizado}</p>
                             <section className="container-links-detalhe">
-                                {listagemProjetos[0].link !== "" ? <a target="_blank" href={listagemProjetos[0].link}><img className='links-detalhe' ref={hoverRefSite} src={isHoveredSite ? SiteBlue : SiteGrey} alt='Link para Site do projeto' /></a>:<div></div>}
-                                {listagemProjetos[0].github !== "" ? <a target="_blank" href={listagemProjetos[0].github}><img className='links-detalhe' ref={hoverRefGit} src={isHoveredGit ? GitBlue : GitGrey} alt='Link para Github' /></a> : <div></div>}
+                                {lista.link !== "" ? <a target="_blank" href={lista.link}><img className='links-detalhe' ref={hoverRefSite} src={isHoveredSite ? SiteBlue : SiteGrey} alt='Link para Site do projeto' /></a>:<div></div>}
+                                {lista.github !== "" ? <a target="_blank" href={lista.github}><img className='links-detalhe' ref={hoverRefGit} src={isHoveredGit ? GitBlue : GitGrey} alt='Link para Github' /></a> : <div></div>}
+                                <button id="botao-voltar" onClick={goToProjetos}>Voltar</button>
                             </section>
                         </section>
                     </section>
-                    
+
+                    <h2>Demonstração</h2>
+                    <hr />
+            <section id="galeria">
+                        <ImageGallery items={imagens} thumbnailPosition={"left"} showIndex />
+                    </section>
                 </section>
             </div>
         </ThemeProvider>

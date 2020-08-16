@@ -43,3 +43,7 @@
     text-align: center;
     font-family: 'Gabriola', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
+@media only screen and (max-device-width: 900px) {
+    
+}

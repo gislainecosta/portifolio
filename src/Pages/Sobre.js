@@ -50,7 +50,7 @@ const Sobre = () => {
                         </section>
                     </section>
 
-                    <h2>Minhas Skills</h2>
+                    <h2>Minhas habilidades</h2>
                     <hr />
                     <section id="linguagens">
                         <img src={IconPs} />

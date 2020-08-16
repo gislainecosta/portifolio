@@ -133,7 +133,7 @@ const Contato = () => {
                             name="mensagem" 
                         />
                         <br />
-                        <input className="botao" type="submit" value="Enviar" />
+                        <input id="botao-enviar" type="submit" value="Enviar" />
                     </form>
                 </section>
             </div>
