@@ -44,6 +44,32 @@ const FotoProjeto = styled.img`
             return "4px 4px 11px -3px rgba(0, 0, 0, 1)"
         }
     }}; 
+    
+    @media only screen and (max-device-width: 900px) {
+        width: ${props => {
+            if (props.tela == "note") {
+                return "40vw"
+            } else if (props.tela == "mobile") {
+                return "20vw"
+            } else {
+                return "25vw"
+            }
+        }};
+        border: ${props => {
+            if (props.tipo == "front") {
+                return "none"
+            } else {
+                return "solid 2.5px rgba(255, 255, 255, 0.849);"
+            }
+        }};
+        margin-left:${props => {
+            if (props.tela == "mobile") {
+                return "10%"
+            } else {
+                return "0"
+            }
+        }};
+    }
 `
 
 const MyTheme = createMuiTheme({

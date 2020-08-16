@@ -30,6 +30,8 @@ const Input = withStyles({
 const useStyles = makeStyles((theme) => ({
     root: {
         marginLeft: '5%',
+        width: '90vw',
+        marginBottom: '5%'
     },
     extendedIcon: {
         marginLeft: theme.spacing(2),
@@ -38,23 +40,23 @@ const useStyles = makeStyles((theme) => ({
     input: {
         '& > *': {
             backgroundColor:'none !important', 
-            width: '50vw',
+            width: '150%',
             color: 'white',
             marginBottom: '2%',
             borderRadius: '15px',
+            marginBottom: '10%'
         },
     },
     inputGrande: {
-        
         '& > *': {
-            width: '50vw',
+            width: '162%',
             color: 'white',
             marginBottom: '2%',
-            minHeight: '15vw',
+            minHeight: '25vw',
             borderRadius: '15px',
+            marginBottom: '10%'
         },
     },
-
 }));
 
 const MyTheme = createMuiTheme({
@@ -104,7 +106,7 @@ const Contato = () => {
                             label="Nome"
                             variant="outlined"
                             name="autor"
-                        />
+                        /><br />
                         <Input 
                             className={classes.input} 
                             color='primary.light'
@@ -113,7 +115,7 @@ const Contato = () => {
                             label="E-mail" 
                             variant="outlined"
                             name="contato"
-                        />
+                        /><br />
                         <Input 
                             className={classes.input} 
                             color='primary.light' 
@@ -121,7 +123,7 @@ const Contato = () => {
                             label="Assunto" 
                             variant="outlined" 
                             name="assunto"
-                        />
+                        /><br />
                         <Input 
                             className={classes.inputGrande} 
                             color='primary.light' 

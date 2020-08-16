@@ -21,6 +21,11 @@ const Botao = styled.button`
     &:hover{
       background: #0381ffc9;
     }
+    @media only screen and (max-device-width: 900px) {
+        width: 70%;
+        height: 20%;
+        font-size: 3vw;
+    }
 `
 
 const MyTheme = createMuiTheme({

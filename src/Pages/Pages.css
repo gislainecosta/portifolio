@@ -19,7 +19,7 @@ input:-webkit-autofill:focus {
     }
 
 hr{
-    border: 3px solid #0381ff34;;
+    border: 5px solid #0381ff34;;
     border-radius: 50px;
     width: 10%;
     margin: 0 0 3% 1%;
@@ -89,6 +89,7 @@ h3{
 
 #texto-sobre > p{
     font-size: 1.3vw;
+    margin-bottom: 3%;
 }
 
 #texto-resumo{
@@ -109,7 +110,7 @@ h3{
     width: 12%;
 }
 
-#texto-sobre > a{
+#texto-sobre> a{
     text-decoration: none;
     background-color: #037fff;
     color: white;
@@ -180,7 +181,8 @@ h3{
 }
 
  #idiomas{
-     width: 50%;
+    width: 50%;
+    margin-bottom: 5%;
 }
 
 #idiomas > img{
@@ -327,10 +329,179 @@ h3{
     margin: 0;
     row-gap: 2vw;
     column-gap: 2vw;
-    margin: 2% auto;
+    margin: 4% auto;
     width: 95%;
 }
 
 @media only screen and (max-device-width: 900px) {
+    hr{
+        border: 2px solid #0381ff34;
+        margin-left: 2.5vw;
+    }
+
+    h1{
+        font-size: 5.5vw;
+        margin-left: 3vw;
+    }
+
+    h2{
+        font-size: 4.5vw;
+        margin-left: 3vw;
+        margin-top: 8vw;
+    }
+
+    h3{
+        font-size: 3vw;
+    }
     
+    #ola, #name{
+        font-size: 5.5vw;
+    }
+
+    #cabecalho-sobre{
+        width: 90%;
+        margin-left: 3vw;
+    }
+
+    #cabecalho-sobre >img{
+        width: 20vw;
+    }
+
+    #cabecalho-sobre >p{
+        font-size: 0.9rem;
+        margin-left: 5%;
+    }
+
+    #texto-sobre{
+        margin-left: 5%;
+    }
+
+    #texto-sobre>p{
+        font-size: 0.7rem;
+        margin-top: 2%;
+    }
+
+    #texto-sobre>a{
+        font-size: 0.7rem;
+    }
+
+    #texto-home{
+        font-size: 3.5vw;
+    }
+
+    #conteudo-principal-home{
+        margin-top: 40vh;
+    }
+
+    #conteudo-principal-home > section {
+        width: 60vw;
+    }
+
+    #texto-resumo{
+        font-size: 0.8rem;
+        width: 93%;
+        margin-left: 0 5%;
+    }
+
+    #linguagens > img{
+        width: 17vw;
+    }
+
+    #linguagens{
+        flex-wrap: wrap;
+        width: 70vw;
+        margin: auto;
+    }
+
+    #educacao > img{
+        width: 25vw;
+    }
+
+    #educacao, #idiomas{
+        width: 100%;
+        margin: auto;
+    }
+
+    #educacao > p{
+        font-size: 0.65rem;
+    }
+
+    #idiomas{
+        width: 90%;
+        margin-bottom: 6%;
+    }
+
+    #idiomas >img{
+        width: 60%;
+    }
+
+    #botao-enviar{
+        height: 5vh;
+        width: 20vw;
+        font-size: 1rem;
+    }
+
+    #galeria{
+        width: 95vw;
+        margin: 0 0 3% 1%;
+    }
+
+    #botao-voltar{
+        width: 15vw;
+        font-size: 0.8rem;
+    }
+
+    .tela-toda{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        width: 100vw;
+        overflow-x: hidden;
+    }
+
+    .conteudo-principal{
+        margin-top: 17vh;
+        width: 95vw;
+    }
+
+    .redes-sociais{
+        width: 8vw;
+    }
+
+    .grid-projetos{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .texto-projetos >p{
+        font-size: 5vw;
+    }
+
+    .texto-projetos >a , .texto-projetos >a:visited, .texto-projetos > button{
+        font-size: 3vw;
+    }
+
+    .descricao-projeto{
+        font-size: 3vw;
+        margin-bottom: 3vw;
+    }
+
+    .cabecalho-projeto p:last-of-type{
+        font-size: 2.5vw;
+    }
+
+    .titulo-projeto{
+        font-size: 7vw;
+    }
+
+    .container-links-detalhe{
+        max-width: 50vw;
+    }
+
+    .links-detalhe{
+        width: 9vw;
+    }
 }

@@ -55,6 +55,15 @@ const FotoProjeto = styled.img`
             return "4px 4px 11px -3px rgba(0, 0, 0, 1)"
         }
     }}; 
+    @media only screen and (max-device-width: 900px) {
+        width: ${props => {
+        if (props.tela == "note") {
+            return "45vw"
+        } else {
+            return "40vw"
+        }
+    }};
+    }
 `
 
 const Projeto = (props) => {
