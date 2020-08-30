@@ -29,7 +29,7 @@ const Home = () => {
     
     return (
         <ThemeProvider theme={MyTheme}>
-            <div className="tela-toda">
+            <div id="tela-toda-home">
                 <Menu paginaAtual={'HOME'}/>
                 <section id='conteudo-principal-home'>
                     <p id="ola">Olá, eu sou a <span id='name'>Gislaine Costa Pereira</span></p>

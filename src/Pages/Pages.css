@@ -45,6 +45,10 @@ h3{
     font-size: 1.2vw;
 }
 
+#tela-toda-home{
+    width: 100vw;
+}
+
 #conteudo-principal-home{
     display: flex;
     flex-direction: column;
@@ -221,14 +225,18 @@ h3{
     box-sizing: border-box;
 }
 
-.tela-toda{
-    width: 98.7vw;
+.tela-toda, #tela-toda-home{
+    
     color: #99a0b7;
     background-color: #10121b;
     display: grid;
     grid-template-columns: 20% 80%;
     overflow-x: none;
     box-sizing: border-box;
+}
+
+.tela-toda{
+    width: 98.7vw;
 }
 
 .projeto{
